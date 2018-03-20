@@ -60,7 +60,9 @@
             <!-- ADICIONAR DATATABLE -->
             <h:form>
                 <h2>LISTA DE ENCUESTAS</h2>
-                <h:dataTable id="tbl-encuestas" var="encuesta" value="#{encuestaController.encuestas}" border="1">
+                <!-- rendered permite mostrar la tabla siempre que existan elementos -->
+                <h:dataTable id="tbl-encuestas" var="encuesta" value="#{encuestaController.encuestas}" border="1"
+                             rendered="#{encuestaController.encuestas.size() > 0 eq true}">
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="Nombre"/>
