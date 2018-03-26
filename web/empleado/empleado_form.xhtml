@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>FORMULARIO EMPLEADO</h2>
+        <h:form id="formaValida">
+            <h:messages style="color: red;"></h:messages>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="codigo" value="Codigo"/>
+                <h:inputText id="codigo"
+                             value="#{empleadoController.empleado.codigo}"
+                             label="Codigo" required="true"/>
+                <h:message for="codigo"/>
+
+                <h:outputLabel for="nombre" value="Nombre:"/>
+                <h:inputText id="nombre" 
+                             value="#{empleadoController.empleado.nombre}" 
+                             label="Nombre" required="true"> 
+                    <f:validateLength minimum="4" maximum="10"/>
+                </h:inputText>
+                <h:message for="nombre"/>
+
+                <h:outputLabel for="edad" value="Edad:"/>
+                <h:inputText id="edad"
+                             value="#{empleadoController.empleado.edad}" 
+                             label="Edad" required="true">
+                    <f:validateLongRange minimum="0" maximum="90"/>
+                </h:inputText>
+                <h:message for="edad"/>
+
+                <h:outputLabel for="email" value="Email:"/>
+                <h:inputText id="email"
+                             value="#{empleadoController.empleado.email}" 
+                             label="Email" required="true"
+                             validator="#{empleadoController.compruebaEmail}"/>
+                <h:message for="email"/>
+
+                <h:outputLabel for="sueldo" value="Sueldo:"/>
+                <h:inputText id="sueldo"
+                             value="#{empleadoController.empleado.sueldo}" 
+                             label="Sueldo" required="true">
+                    <f:validator validatorId="sueldoValidator"/>
+                </h:inputText>
+                <h:message for="sueldo"/>
+
+                <h:outputLabel for="fechaingreso" value="Fecha de Ingreso:"/>
+                <h:inputText id="fechaingreso"
+                             value="#{empleadoController.empleado.fechaIngreso}"
+                             label="Fecha de ingreso" required="true">
+                    <f:convertDateTime type="date" dateStyle="short" timeZone="EDT"/>
+                </h:inputText>
+                <h:message for="fechaingreso"/>
+            </h:panelGrid>
+            
+            <h:commandButton value="Enviar" action="empleado_view"/>
+        </h:form>
+    </h:body>
+</html>
+

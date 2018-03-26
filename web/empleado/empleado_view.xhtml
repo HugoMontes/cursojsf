@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2>DATOS DE EMPLEADO</h2>
+        <h:panelGrid columns="2">
+            <h:outputText value="Codigo:"/>
+            <h:outputText value="#{empleadoController.empleado.codigo}"/>
+            <h:outputText value="Nombre:"/>
+            <h:outputText value="#{empleadoController.empleado.nombre}"/>
+            <h:outputText value="Edad:"/>
+            <h:outputText value="#{empleadoController.empleado.edad}"/>
+            <h:outputText value="Email:"/>
+            <h:outputText value="#{empleadoController.empleado.email}"/>
+            <h:outputText value="Sueldo:"/>
+            <h:outputText value="#{empleadoController.empleado.sueldo}"/>            
+            <h:outputText value="Sueldo (Moneda):"/>
+            <h:outputText value="#{empleadoController.empleado.sueldo}">
+                <f:convertNumber type="currency" currencySymbol="Bs. "/>
+            </h:outputText>
+            <h:outputText value="Sueldo (1 decimal):"/>
+            <h:outputText value="#{empleadoController.empleado.sueldo}">
+                <f:convertNumber pattern="#.#"/>
+            </h:outputText>
+            <h:outputText value="Fecha:"/>
+            <h:outputText value="#{empleadoController.empleado.fechaIngreso}"/>            
+            <h:outputText value="Fecha corta:"/>
+            <h:outputText value="#{empleadoController.empleado.fechaIngreso}">
+                <f:convertDateTime type="date" dateStyle="short"/>
+            </h:outputText>
+            <h:outputText value="Fecha media:"/>
+            <h:outputText value="#{empleadoController.empleado.fechaIngreso}">
+                <f:convertDateTime type="date" dateStyle="medium"/>
+            </h:outputText>
+            <h:outputText value="Fecha larga:"/>
+            <h:outputText value="#{empleadoController.empleado.fechaIngreso}">
+                <f:convertDateTime type="date" dateStyle="long"/>
+            </h:outputText>
+            <h:outputText value="Fecha personalizada:"/>
+            <h:outputText value="#{empleadoController.empleado.fechaIngreso}">
+                <f:convertDateTime type="date" pattern="dd/MM/yyyy"/>
+            </h:outputText>
+        </h:panelGrid>
+    </h:body>
+</html>
+
