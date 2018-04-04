@@ -13,13 +13,13 @@
         <!-- Titulo dinamico de la pagina -->
         <title><ui:insert name="title">title</ui:insert></title>
         <!-- Bootstrap Core CSS -->
-        <h:outputStylesheet name="./vendor/bootstrap/css/bootstrap.min.css"/>
+        <h:outputStylesheet name="vendor/bootstrap/css/bootstrap.min.css"/>
         <!-- MetisMenu CSS -->
-        <h:outputStylesheet name="./vendor/metisMenu/metisMenu.min.css"/>
+        <h:outputStylesheet name="vendor/metisMenu/metisMenu.min.css"/>
         <!-- Custom CSS -->
-        <h:outputStylesheet name="./dist/css/sb-admin-2.css"/>
+        <h:outputStylesheet name="dist/css/sb-admin-2.css"/>
         <!-- Custom Fonts -->
-        <h:outputStylesheet name="./vendor/font-awesome/css/font-awesome.min.css"/>
+        <h:outputStylesheet name="vendor/font-awesome/css/font-awesome.min.css"/>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +34,7 @@
     <h:body>
         <div id="wrapper">
             <!-- Navigation -->
-            <ui:include src="./menu.xhtml"/>
+            <ui:include src="menu.xhtml"/>
             <!-- Page Content -->
             <div id="page-wrapper">
                 <div class="container-fluid">
@@ -58,13 +58,13 @@
         <!-- /#wrapper -->
 
         <!-- jQuery -->
-        <h:outputScript name="./vendor/jquery/jquery.min.js"/>
+        <h:outputScript name="vendor/jquery/jquery.min.js"/>
         <!-- Bootstrap Core JavaScript -->
-        <h:outputScript name="./vendor/bootstrap/js/bootstrap.min.js"/>
+        <h:outputScript name="vendor/bootstrap/js/bootstrap.min.js"/>
         <!-- Metis Menu Plugin JavaScript -->
-        <h:outputScript name="./vendor/metisMenu/metisMenu.min.js"/>
+        <h:outputScript name="vendor/metisMenu/metisMenu.min.js"/>
         <!-- Custom Theme JavaScript -->
-        <h:outputScript name="./dist/js/sb-admin-2.js"/>
+        <h:outputScript name="dist/js/sb-admin-2.js"/>
         <!-- Va ha contener js propio de cada pagina -->
         <ui:insert name="javascript"></ui:insert>
     </h:body>
